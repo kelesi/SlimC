@@ -1,0 +1,23 @@
+{
+    "name":        "kelesi/SlimC",
+    "version":     "0.1",
+    "type":        "library",
+    "description": "Simple controller extensions for the Slim Framework 2.x",
+    "keywords":    ["microframework", "controller"],
+    "homepage":    "http://github.com/kelesi/SlimC",
+    "license":     "MIT",
+    "authors": [
+        {
+            "name":     "Milan Kelesi",
+            "email":    "kelesi@gmail.com",
+            "homepage": "http://github.com/kelesi"
+        }
+    ],
+    "require": {
+        "php":       ">=5.3.0",
+        "slim/slim": "2.*"
+    },
+    "autoload": {
+        "classmap" : [ "SlimC.php" ]
+    }
+}
