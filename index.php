@@ -1,19 +1,21 @@
 <?php
-// if you're using Composer you probably won't need all this
-require dirname(__FILE__) . '/../Slim/Slim/Slim.php';
-require 'SlimC.php';
+use \Slim\SlimC;
+require         __DIR__.'/vendor/autoload.php';
 require 'controllers/ExampleController.php';
-\Slim\SlimC::registerAutoloader();
+//\Slim\SlimC::registerAutoloader();
 
-$app = new \Slim\SlimC(array(
+$app = new SlimC(array(
     'controller.namespace' => '\\Example\\Controllers',
     'templates.path' => 'views'
 ));
 
-$app->get('/', function() {
-    echo 'Try it out: <a href="/example">controller root</a> | ' .
-        '<a href="/example/page">controller page</a> | ' .
-        '<a href="/example/page/var">controller page with a var</a>';
+$app->get('/', function() use ($app) {
+    $url1 = $app->urlFor('ExampleController.getIndex');
+    $url2 = $app->urlFor('ExampleController.getPage');
+    $url3 = $app->urlFor('ExampleController.getPageWithVar', array('var' => 'TEST'));
+    echo 'Try it out: <a href="'.$url1.'">controller root</a> | ' .
+        '<a href="'.$url2.'">controller page</a> | ' .
+        '<a href="'.$url3.'">controller page with a var</a>';
 });
 
 $app->controller(
