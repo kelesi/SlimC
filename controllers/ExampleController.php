@@ -1,7 +1,7 @@
 <?php
 namespace Example\Controllers;
 
-use \Slim\Controller;
+use \SlimC\Controller;
 
 class ExampleController extends Controller
 {
@@ -41,4 +41,12 @@ class ExampleController extends Controller
 		echo '<p>Route name: ' . $route_name . '</p>';
 
 	}
+
+	public function getPageById($id)
+	{
+		extract($this->vars);
+		echo '<p>A page with a requested id: '. $id . '</p>';
+		echo '<p>Route name: ' . $route_name . '</p>';
+
+	}    
 }
