@@ -32,30 +32,10 @@ use \Slim\Slim;
 use \Slim\Route;
 
 /*
- * 
+ * Slim controller
  */
 class SlimC extends Slim
 {
-    /*
-    Example usage:
-        $app->controller(
-            '/reports',
-            'ReportsController',
-            array(
-                'GET /' => 'getIndex',
-                'GET /:id shortName' => 'getPageWithInteger',
-                'GET,POST /page/:var name3' => 'getPageWithVar'
-            ),
-            array(
-                "id" => "\d+" //integer validation
-            )
-        );
-        //Get URL for /reports
-        $app->urlFor('ReportsController.getIndex');
-        //Get URL for /reports/:id (shortName has to be unique)
-        $app->urlFor('shortName', array('id' => 1);
-    */
-
     /**
      * Map a route to a controller class
      * @param string $baseRoute Base route for the whole class
